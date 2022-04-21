@@ -31,15 +31,16 @@ sphere.geometry.setAttribute(
     new THREE.BufferAttribute(sphere.geometry.attributes.uv.array, 2)
 )
 sphere.rotation.x = 300
+sphere.rotation.z = 50
 sphere.position.z = 3
-sphere.position.x = 0.8
+sphere.position.x = 1
 
 scene.add(sphere)
 
 
 // Camera
 const camera = new THREE.PerspectiveCamera( 75, sizes.width / sizes.height)
-camera.position.z = 3
+camera.position.z = 3.2
 scene.add(camera)
 
 
@@ -63,7 +64,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    sphere.rotation.y = 0.1 * elapsedTime
+    sphere.rotation.y = 0.03 * elapsedTime
 
     // Render
     renderer.render(scene, camera)
