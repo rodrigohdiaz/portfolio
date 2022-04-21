@@ -34,4 +34,9 @@ body {
     font-size: 3vmin;
 }
 
+.text{
+    position: relative;
+    font-size: 2vmin;
+}
+
 
