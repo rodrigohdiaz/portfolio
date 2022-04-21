@@ -22,7 +22,7 @@ material.wireframe = true
 material.side = THREE.DoubleSide
 
 const sphere = new THREE.Mesh(
-new THREE.SphereGeometry(1, 32, 32),
+new THREE.SphereGeometry(2.5, 32, 32),
 material
 )
 
@@ -31,16 +31,15 @@ sphere.geometry.setAttribute(
     new THREE.BufferAttribute(sphere.geometry.attributes.uv.array, 2)
 )
 sphere.rotation.x = 300
-sphere.rotation.z = 50
-sphere.position.z = 3
-sphere.position.x = 1
+sphere.position.z = 4.75
+sphere.position.x = 2.5
 
 scene.add(sphere)
 
 
 // Camera
 const camera = new THREE.PerspectiveCamera( 75, sizes.width / sizes.height)
-camera.position.z = 3.2
+camera.position.z = 5
 scene.add(camera)
 
 
@@ -70,6 +69,16 @@ const tick = () =>
     renderer.render(scene, camera)
 
     window.requestAnimationFrame(tick)
+
+    window.addEventListener( 'resize', onWindowResize, false );
+			
+    function onWindowResize() {
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
 }
 
 tick()
