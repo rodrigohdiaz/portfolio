@@ -15,7 +15,7 @@ const sizes = {
 }
 
 /**
- *  Scroll
+ *  Scroll-
  */
 let scrollY = window.scrollY
 let currentSection = 0
